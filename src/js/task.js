@@ -1,4 +1,4 @@
-class Task {
+export class Task {
   #title;
   constructor(title, count = 0) {
     this.id = Math.floor(Math.random() * 90000) + 10000;
