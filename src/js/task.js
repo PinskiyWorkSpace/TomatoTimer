@@ -18,3 +18,25 @@ export class Task {
     return this.#title;
   } 
 }
+
+export class ImportantTask extends Task {
+  constructor(title, counter = 0) {
+    super(title, counter);
+    this.importance = 'Important';
+  }
+}
+
+export class StandardTask extends Task {
+  constructor(title, counter = 0) {
+    super(title, counter);
+    this.importance = 'Standard';
+  }
+}
+
+export class UnimportantTask extends Task {
+  constructor(title, counter = 0) {
+    super(title, counter);
+    this.importance = 'Unimportant';
+  }
+}
+

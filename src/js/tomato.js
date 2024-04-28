@@ -1,12 +1,16 @@
-import { Task } from "./task";
+import { Task, ImportantTask, StandardTask, UnimportantTask } from "./task";
 
 class Tomato {
+
   activeTask = null;
+
   constructor({time = 25, pause = 5, bigPause = 15, tasks = []}) {
+    if (Tomato.instance) return Tomato.instance;
     this.time = time;
     this.pause = pause;
     this.bigPause = bigPause;
     this.tasks = tasks;
+    Tomato.instance = this;
   }
 
   addTask(task) {
@@ -58,15 +62,15 @@ const test = new Tomato({
   bigPause: 50,
 })
 
-const task = new Task('Кушать', 2)
-const task2 = new Task('Спать', 6)
+const task = new ImportantTask('Кушать', 2)
+const task2 = new StandardTask('Спать', 6)
 test.addTask(task);
 test.addTask(task2);
-console.log('test: ', test);
 
 test.activateTask(task.id)
 
 test.runTask()
+console.log('test: ', test);
 
 
 
