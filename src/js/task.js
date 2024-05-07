@@ -16,27 +16,28 @@ export class Task {
 
   get title() {
     return this.#title;
-  } 
+  }
 }
 
 export class ImportantTask extends Task {
-  constructor(title, counter = 0) {
-    super(title, counter);
-    this.importance = 'Important';
+  constructor(title, count = 0) {
+    super(title, count);
+    this.importance = 'important';
   }
 }
 
 export class StandardTask extends Task {
-  constructor(title, counter = 0) {
-    super(title, counter);
-    this.importance = 'Standard';
+  constructor(title, count = 0) {
+    super(title, count);
+    this.importance = 'default';
   }
 }
 
 export class UnimportantTask extends Task {
-  constructor(title, counter = 0) {
-    super(title, counter);
-    this.importance = 'Unimportant';
+  constructor(title, count = 0) {
+    super(title, count);
+    this.importance = 'so-so';
   }
 }
+
 
